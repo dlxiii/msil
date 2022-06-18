@@ -7,9 +7,9 @@ Date: Jun 17, 2022
 # external
 import logging
 # internal
-from UmiShiruAPI.msil import Msil
+from UmiShiruAPI.umiShiru import UmiShiru
 
-class MsilDirector:
+class UmiShiruDirector:
 
     def __init__(self, name: str, area = None):
         self.name = name
@@ -35,7 +35,7 @@ class MsilDirector:
             self.prefecture = ["Fukuoka", "Kagoshima", "Kumamoto", "Miyazaki", "Nagasaki", "Oita", "Okinawa", "Saga"]
         else:
             logging.debug('No matching area name')
-        self.builder = Msil(
+        self.builder = UmiShiru(
             self.name
         )
 
@@ -47,6 +47,6 @@ if __name__ == '__main__':
 
     name = 'Demarcated Fishery Right'
 
-    msil = MsilDirector(name)
+    msil = UmiShiruDirector(name)
     df = msil.get()
     print()

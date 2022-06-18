@@ -8,13 +8,13 @@ Date: Jun 17, 2022
 import json
 import pandas as pd
 # internal
-from UmiShiruAPI.rawMsilData import RawMsilData
+from UmiShiruAPI.rawData import RawData
 
-class Msil:
+class UmiShiru:
     def __init__(self, name: str):
         self.data_js = None
         self.data_df = None
-        self.data_raw = RawMsilData(name).get_data()
+        self.data_raw = RawData(name).get_data()
 
     def get_js(self):
         # Change raw data to json format
@@ -33,7 +33,7 @@ class Msil:
 
 if __name__ == '__main__':
     name = 'Demarcated Fishery Right'
-    data_raw = Msil(name).get_df()
+    data_raw = UmiShiru(name).get_df()
     print()
 '''
     'displayFieldName': '都道府県',

@@ -8,7 +8,7 @@ import urllib.request
 import logging
 # internal
 
-class RawMsilData:
+class RawData:
 
     def __init__(self, name: str):
         # list or string
@@ -46,5 +46,5 @@ class RawMsilData:
 
 if __name__ == '__main__':
     name = 'Common Fishery Right'
-    data_raw = RawMsilData(name).get_data()
+    data_raw = RawData(name).get_data()
     print()
