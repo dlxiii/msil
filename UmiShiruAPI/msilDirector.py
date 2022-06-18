@@ -7,7 +7,7 @@ Date: Jun 17, 2022
 # external
 import logging
 # internal
-from msil import Msil
+from UmiShiruAPI.msil import Msil
 
 class MsilDirector:
 

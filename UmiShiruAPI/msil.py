@@ -8,7 +8,7 @@ Date: Jun 17, 2022
 import json
 import pandas as pd
 # internal
-from rawMsilData import RawMsilData
+from UmiShiruAPI.rawMsilData import RawMsilData
 
 class Msil:
     def __init__(self, name: str):
