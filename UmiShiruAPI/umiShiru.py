@@ -25,7 +25,7 @@ class UmiShiru:
         # Change json data to df format
         self.data_js = self.get_js()
         self.data_df = pd.json_normalize(self.data_js["features"])
-        self.data_df["geometry.rings"] = self.data_df["geometry.rings"].str[0]
+        self.data_df["geometry.rings"] = self.data_df["geometry.rings"].apply(lambda x: [tuple(xy) for xy in x[0]])
         self.data_df['geometryType'] = self.data_js['geometryType']
         self.data_df['spatialReference.wkid'] = self.data_js['spatialReference']['wkid']
         self.data_df.rename(columns = {'attributes.都道府県': 'attributes.prefectures'}, inplace=True)
